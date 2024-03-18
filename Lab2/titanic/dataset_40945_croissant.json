@@ -1,0 +1,370 @@
+{
+    "@context": {
+        "@language": "en",
+        "@vocab": "https://schema.org/",
+        "citeAs": "cr:citeAs",
+        "column": "cr:column",
+        "conformsTo": "dct:conformsTo",
+        "cr": "http://mlcommons.org/croissant/",
+        "data": {
+            "@id": "cr:data",
+            "@type": "@json"
+        },
+        "dataBiases": "cr:dataBiases",
+        "dataCollection": "cr:dataCollection",
+        "dataType": {
+            "@id": "cr:dataType",
+            "@type": "@vocab"
+        },
+        "dct": "http://purl.org/dc/terms/",
+        "extract": "cr:extract",
+        "field": "cr:field",
+        "fileProperty": "cr:fileProperty",
+        "fileObject": "cr:fileObject",
+        "fileSet": "cr:fileSet",
+        "format": "cr:format",
+        "includes": "cr:includes",
+        "isEnumeration": "cr:isEnumeration",
+        "isLiveDataset": "cr:isLiveDataset",
+        "jsonPath": "cr:jsonPath",
+        "key": "cr:key",
+        "md5": "cr:md5",
+        "parentField": "cr:parentField",
+        "path": "cr:path",
+        "personalSensitiveInformation": "cr:personalSensitiveInformation",
+        "recordSet": "cr:recordSet",
+        "references": "cr:references",
+        "regex": "cr:regex",
+        "repeated": "cr:repeated",
+        "replace": "cr:replace",
+        "sc": "https://schema.org/",
+        "separator": "cr:separator",
+        "source": "cr:source",
+        "subField": "cr:subField",
+        "transform": "cr:transform"
+    },
+    "@type": "sc:Dataset",
+    "conformsTo": "http://mlcommons.org/croissant/1.0",
+    "dateCreated": "2017-10-16T01:17:36",
+    "description": "**Author**: Frank E. Harrell Jr., Thomas Cason  \n**Source**: [Vanderbilt Biostatistics](http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic.html)  \n**Please cite**:   \n\nThe original Titanic dataset, describing the survival status of individual passengers on the Titanic. The titanic data does not contain information from the crew, but it does contain actual ages of half of the passengers. The principal source for data about Titanic passengers is the Encyclopedia Titanica. The datasets used here were begun by a variety of researchers. One of the original sources is Eaton & Haas (1994) Titanic: Triumph and Tragedy, Patrick Stephens Ltd, which includes a passenger list created by many researchers and edited by Michael A. Findlay.\n\nThomas Cason of UVa has greatly updated and improved the titanic data frame using the Encyclopedia Titanica and created the dataset here. Some duplicate passengers have been dropped, many errors corrected, many missing ages filled in, and new variables created. \n\nFor more information about how this dataset was constructed:\nhttp://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic3info.txt\n\n\n### Attribute information  \n\nThe variables on our extracted dataset are pclass, survived, name, age, embarked, home.dest, room, ticket, boat, and sex. pclass refers to passenger class (1st, 2nd, 3rd), and is a proxy for socio-economic class. Age is in years, and some infants had fractional values. The titanic2 data frame has no missing data and includes records for the crew, but age is dichotomized at adult vs. child. These data were obtained from Robert Dawson, Saint Mary's University, E-mail. The variables are pclass, age, sex, survived. These data frames are useful for demonstrating many of the functions in Hmisc as well as demonstrating binary logistic regression analysis using the Design library. For more details and references see Simonoff, Jeffrey S (1997): The \"unusual episode\" and a second statistics course. J Statistics Education, Vol. 5 No. 1.",
+    "isAccessibleForFree": true,
+    "keywords": [
+        "Computational Universe",
+        "Manufacturing",
+        "text_data"
+    ],
+    "license": "Public",
+    "name": "Titanic",
+    "url": "https://www.openml.org/search?type=data&id=40945",
+    "version": 1,
+    "distribution": [
+        {
+            "@type": "cr:FileObject",
+            "@id": "data-file",
+            "name": "data-file",
+            "description": "Data file belonging to the dataset.",
+            "contentUrl": "https://api.openml.org/data/v1/download/16826755/Titanic.arff",
+            "encodingFormat": "text/plain",
+            "md5": "60ac7205eee0ba5045c90b3bba95b1c4"
+        }
+    ],
+    "recordSet": [
+        {
+            "@type": "cr:RecordSet",
+            "@id": "enumerations/sex",
+            "name": "sex",
+            "description": "Possible values for sex",
+            "field": [
+                {
+                    "@type": "cr:Field",
+                    "@id": "enumerations/sex/value",
+                    "name": "value",
+                    "description": "The value of sex.",
+                    "dataType": "sc:Text"
+                }
+            ],
+            "data": [
+                {
+                    "value": "female"
+                },
+                {
+                    "value": "male"
+                }
+            ]
+        },
+        {
+            "@type": "cr:RecordSet",
+            "@id": "enumerations/embarked",
+            "name": "embarked",
+            "description": "Possible values for embarked",
+            "field": [
+                {
+                    "@type": "cr:Field",
+                    "@id": "enumerations/embarked/value",
+                    "name": "value",
+                    "description": "The value of embarked.",
+                    "dataType": "sc:Text"
+                }
+            ],
+            "data": [
+                {
+                    "value": "C"
+                },
+                {
+                    "value": "Q"
+                },
+                {
+                    "value": "S"
+                }
+            ]
+        },
+        {
+            "@type": "cr:RecordSet",
+            "@id": "file/1",
+            "name": "data-file-description",
+            "description": "Listing the fields of the data.",
+            "field": [
+                {
+                    "@type": "cr:Field",
+                    "@id": "features/0",
+                    "name": "pclass",
+                    "description": "pclass - a field.",
+                    "dataType": [
+                        "sc:Float",
+                        "sc:Integer"
+                    ],
+                    "source": {
+                        "distribution": {
+                            "@id": "data-file"
+                        },
+                        "extract": {
+                            "column": "pclass"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "features/1",
+                    "name": "survived",
+                    "description": "survived - the default target field.",
+                    "dataType": "sc:Boolean",
+                    "source": {
+                        "distribution": {
+                            "@id": "data-file"
+                        },
+                        "extract": {
+                            "column": "survived"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "features/2",
+                    "name": "name",
+                    "description": "name - a field.",
+                    "dataType": "sc:Text",
+                    "source": {
+                        "distribution": {
+                            "@id": "data-file"
+                        },
+                        "extract": {
+                            "column": "name"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "features/3",
+                    "name": "sex",
+                    "description": "sex - a field.",
+                    "dataType": "sc:Text",
+                    "isEnumeration": true,
+                    "references": {
+                        "field": {
+                            "@id": "enumerations/sex/value"
+                        }
+                    },
+                    "source": {
+                        "distribution": {
+                            "@id": "data-file"
+                        },
+                        "extract": {
+                            "column": "sex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "features/4",
+                    "name": "age",
+                    "description": "age - a field.",
+                    "dataType": [
+                        "sc:Float",
+                        "sc:Integer"
+                    ],
+                    "source": {
+                        "distribution": {
+                            "@id": "data-file"
+                        },
+                        "extract": {
+                            "column": "age"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "features/5",
+                    "name": "sibsp",
+                    "description": "sibsp - a field.",
+                    "dataType": [
+                        "sc:Float",
+                        "sc:Integer"
+                    ],
+                    "source": {
+                        "distribution": {
+                            "@id": "data-file"
+                        },
+                        "extract": {
+                            "column": "sibsp"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "features/6",
+                    "name": "parch",
+                    "description": "parch - a field.",
+                    "dataType": [
+                        "sc:Float",
+                        "sc:Integer"
+                    ],
+                    "source": {
+                        "distribution": {
+                            "@id": "data-file"
+                        },
+                        "extract": {
+                            "column": "parch"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "features/7",
+                    "name": "ticket",
+                    "description": "ticket - a field.",
+                    "dataType": "sc:Text",
+                    "source": {
+                        "distribution": {
+                            "@id": "data-file"
+                        },
+                        "extract": {
+                            "column": "ticket"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "features/8",
+                    "name": "fare",
+                    "description": "fare - a field.",
+                    "dataType": [
+                        "sc:Float",
+                        "sc:Integer"
+                    ],
+                    "source": {
+                        "distribution": {
+                            "@id": "data-file"
+                        },
+                        "extract": {
+                            "column": "fare"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "features/9",
+                    "name": "cabin",
+                    "description": "cabin - a field.",
+                    "dataType": "sc:Text",
+                    "source": {
+                        "distribution": {
+                            "@id": "data-file"
+                        },
+                        "extract": {
+                            "column": "cabin"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "features/10",
+                    "name": "embarked",
+                    "description": "embarked - a field.",
+                    "dataType": "sc:Text",
+                    "isEnumeration": true,
+                    "references": {
+                        "field": {
+                            "@id": "enumerations/embarked/value"
+                        }
+                    },
+                    "source": {
+                        "distribution": {
+                            "@id": "data-file"
+                        },
+                        "extract": {
+                            "column": "embarked"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "features/11",
+                    "name": "boat",
+                    "description": "boat - a field.",
+                    "dataType": "sc:Text",
+                    "source": {
+                        "distribution": {
+                            "@id": "data-file"
+                        },
+                        "extract": {
+                            "column": "boat"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "features/12",
+                    "name": "body",
+                    "description": "body - a field.",
+                    "dataType": [
+                        "sc:Float",
+                        "sc:Integer"
+                    ],
+                    "source": {
+                        "distribution": {
+                            "@id": "data-file"
+                        },
+                        "extract": {
+                            "column": "body"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "features/13",
+                    "name": "home.dest",
+                    "description": "home.dest - a field.",
+                    "dataType": "sc:Text",
+                    "source": {
+                        "distribution": {
+                            "@id": "data-file"
+                        },
+                        "extract": {
+                            "column": "home.dest"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
